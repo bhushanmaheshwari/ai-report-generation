@@ -4,7 +4,6 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 
 ![Demo Screenshot](https://langchain-ai.github.io/langgraph/tutorials/workflows/img/worker.png)
 
----
 
 ## 🚀 Features
 
@@ -14,7 +13,6 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 - **Seamless Orchestration**: Uses a multi-step workflow (orchestrator, workers, synthesizer) for modular, extensible report generation.
 - **Modern UI**: Clean, interactive Streamlit interface for easy use.
 
----
 
 ## 🛠️ How It Works
 
@@ -23,7 +21,6 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 3. **Writing**: Each section is written by a dedicated LLM worker, with citations and markdown formatting.
 4. **Synthesis**: All sections are combined into a final, ready-to-use AI report.
 
----
 
 ## 🏗️ Tech Stack
 
@@ -35,7 +32,6 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 - [Pydantic](https://docs.pydantic.dev/)
 - [dotenv](https://pypi.org/project/python-dotenv/)
 
----
 
 ## ⚡ Quickstart
 
@@ -63,8 +59,6 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
    streamlit run workflows/orchestrator.py
    ```
 
----
-
 ## 🧠 Example Usage
 
 1. Open the app in your browser.
@@ -72,7 +66,6 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 3. Watch as the app plans, writes, and synthesizes your AI report.
 4. Copy or download your final report!
 
----
 
 ## ✨ Why Use This?
 
@@ -80,19 +73,16 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 - **Get structured, scholarly content** with citations.
 - **Flexible and extensible** for research, academia, or business.
 
----
 
 ## 🤝 Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
----
 
 ## 📄 License
 
 [MIT](LICENSE)
 
----
 
 ## 🙏 Acknowledgements
 
@@ -101,8 +91,6 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 - [Streamlit](https://streamlit.io/)
 - [Google Generative AI](https://ai.google.dev/)
 
----
 
 > Made with ❤️ for researchers, students, and professionals.
 
---- 

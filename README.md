@@ -37,7 +37,7 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/ai-report-generation.git
+   git clone https://github.com/bhushanmaheshwari/ai-report-generation.git
    cd ai-report-generation
    ```
 
@@ -56,7 +56,7 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 
 4. **Run the app**
    ```bash
-   streamlit run workflows/orchestrator.py
+   streamlit run Home.py
    ```
 
 ## 🧠 Example Usage

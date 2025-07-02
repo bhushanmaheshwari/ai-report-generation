@@ -4,8 +4,6 @@ from workflow import orchestrator_worker
 if "generating" not in st.session_state:
     st.session_state.generating = False
 
-st.session_state.generating = False 
-
 st.markdown("<div style='text-align: center; margin-bottom:20px'><h1>Let's get started!</h1></div>", unsafe_allow_html=True)
 
 with st.form("input_form", border=0):
@@ -13,7 +11,6 @@ with st.form("input_form", border=0):
     submitted = st.form_submit_button("Generate Report")
     if submitted:
         st.session_state.generating = True
-        st.rerun()
 
 if st.session_state.generating:
     progress_placeholder = st.empty()
@@ -42,6 +39,8 @@ if st.session_state.generating:
             st.markdown(event["synthesizer"]["final_report"])
             expander_header = "✅ Completed!"
             expander_open = False
+        
+        st.session_state.generating = False 
 
         with progress_placeholder.expander(expander_header, expanded=expander_open):
             for msg in progress_messages:

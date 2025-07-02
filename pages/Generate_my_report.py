@@ -4,6 +4,8 @@ from workflow import orchestrator_worker
 if "generating" not in st.session_state:
     st.session_state.generating = False
 
+st.session_state.generating = False 
+
 st.markdown("<div style='text-align: center; margin-bottom:20px'><h1>Let's get started!</h1></div>", unsafe_allow_html=True)
 
 with st.form("input_form", border=0):

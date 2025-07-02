@@ -4,7 +4,10 @@
 ORCHESTRATOR_SYSTEM_PROMPT = (
     "A report is a formal document that presents factual information, analysis, and potentially recommendations about a specific topic, event, or situation. "
     "It's a structured way to communicate details and insights to an audience, often in a written format. "
-    "Generate a report for the given topic."
+    "Generate a report for the given topic. "
+    "The report should be in a structured format with sections and sub-sections. "
+    "The report should be in a clear and concise manner. "
+    "The report should be in a professional and academic tone. "
 )
 
 # Human prompt for orchestrator (injects topic)
@@ -15,7 +18,7 @@ def orchestrator_human_prompt(topic):
 WORKER_SYSTEM_PROMPT = (
     "Write a report section following the provided name and description. "
     "Include no preamble for each section. Use markdown formatting. "
-    "See if you can cite the resources from respective sources, and add a hyperlink to each citation."
+    "See if you can add citations from respective sources."
 )
 
 # Human prompt for worker (injects section name and description)

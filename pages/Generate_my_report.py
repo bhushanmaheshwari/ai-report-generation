@@ -1,8 +1,10 @@
 import streamlit as st
+from workflow import orchestrator_worker
+    
+if "generating" not in st.session_state:
+    st.session_state.generating = False
 
-st.markdown("<div style='text-align: center; margin-bottom:20px'><h1>📚 AI Report Generator</h1></div>", unsafe_allow_html=True)
-
-st.subheader("Let's get started!", divider="grey")
+st.markdown("<div style='text-align: center; margin-bottom:20px'><h1>Let's get started!</h1></div>", unsafe_allow_html=True)
 
 with st.form("input_form", border=0):
     user_input = st.text_area("📌 Enter your topic here", placeholder="e.g., Impact of WBG DPI in Lower and Middle Income countries...")
@@ -25,18 +27,18 @@ if st.session_state.generating:
     
     for event in events:
         if "orchestrator" in event:
-            sections_text = "*Preparing: Layout of the report*"
+            sections_text = "*now working on: preparing the layout of the report*"
             progress_messages.append(sections_text)
         
         elif "worker" in event:
             progress_messages.append(
-                f"*Working on: {event['worker']['section_summaries']}*"
+                f"*now working on: {event['worker']['section_summaries'][0]}*"
             )
 
         elif "synthesizer" in event:
             # progress_messages.append("✅ **Report complete!**")
             st.markdown(event["synthesizer"]["final_report"])
-            expander_header = "Report generation complete!"
+            expander_header = "✅ Completed!"
             expander_open = False
 
         with progress_placeholder.expander(expander_header, expanded=expander_open):

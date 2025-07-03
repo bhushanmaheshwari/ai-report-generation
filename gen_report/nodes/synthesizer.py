@@ -1,4 +1,4 @@
-from classes.State import State
+from gen_report.classes.State import State
 
 def synthesizer(state: State):
     """Synthesize fill report from sections"""

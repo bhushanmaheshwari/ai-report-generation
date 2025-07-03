@@ -1,5 +1,5 @@
 from typing import Annotated, List, TypedDict
-from classes.Sections import Section
+from gen_report.classes.Sections import Section
 import operator
 
 class State(TypedDict):

@@ -1,10 +1,10 @@
 from langgraph.graph import StateGraph, END, START
 
-from nodes.orchestrator import orchestrator, assign_workers
-from nodes.worker import worker
-from nodes.synthesizer import synthesizer
+from gen_report.nodes.orchestrator import orchestrator, assign_workers
+from gen_report.nodes.worker import worker
+from gen_report.nodes.synthesizer import synthesizer
 
-from classes.State import State, WorkerState
+from gen_report.classes.State import State, WorkerState
 
 
 orchestrator_worker_builder = StateGraph(State)

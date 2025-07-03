@@ -1,5 +1,5 @@
 import streamlit as st
-from workflow import orchestrator_worker
+from gen_report.workflow import orchestrator_worker
     
 if "generating" not in st.session_state:
     st.session_state.generating = False

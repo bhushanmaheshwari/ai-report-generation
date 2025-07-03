@@ -1,7 +1,7 @@
 from langchain_core.messages import SystemMessage, HumanMessage
-from llm import llm
-from classes.State import WorkerState
-from prompt import WORKER_SYSTEM_PROMPT, worker_human_prompt
+from gen_report.tools.llm import llm
+from gen_report.classes.State import WorkerState
+from gen_report.prompts.prompt import WORKER_SYSTEM_PROMPT, worker_human_prompt
 
 def worker(state: WorkerState):
     """Worker writes a section of the report"""

@@ -1,5 +1,5 @@
 from langchain_core.messages import SystemMessage, HumanMessage
-from gen_report.tools.llm import llm
+from llm import llm
 from gen_report.classes.State import WorkerState
 from gen_report.prompts.prompt import WORKER_SYSTEM_PROMPT, worker_human_prompt
 

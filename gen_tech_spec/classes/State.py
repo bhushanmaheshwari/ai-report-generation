@@ -8,7 +8,6 @@ class State(TypedDict):
     components: str
     flow: str
     code: str
-    dummy_code:str
     diagram: str
     report: str
 

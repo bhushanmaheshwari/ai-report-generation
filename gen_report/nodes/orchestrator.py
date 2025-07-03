@@ -1,7 +1,7 @@
 from langchain_core.messages import SystemMessage, HumanMessage
 from langgraph.types import Send
 
-from gen_report.tools.llm import planner
+from llm import llm
 from gen_report.classes.State import State, WorkerState
 from gen_report.prompts.prompt import ORCHESTRATOR_SYSTEM_PROMPT, orchestrator_human_prompt
 from gen_report.classes.Sections import Sections

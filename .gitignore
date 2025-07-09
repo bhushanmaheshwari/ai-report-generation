@@ -69,3 +69,5 @@ coverage.xml
 
 # VS Code
 .vscode/
+
+gen_tech_spec/static/*

@@ -31,55 +31,54 @@ Please refer the following requirements and enlist the technical components
 """
 
 # === Prompt: Integration Mapping Agent ===
-INTEGRATION_MAPPING_SYSTEM_PROMPT = """
-You are an integration architect specializing in enterprise platforms.
+TECHNOLOGY_MAPPING_SYSTEM_PROMPT = """
+You are solution architect expert in Python Diagrams library helping identifying all the technical components based on the technology stack. 
 
 <Task>
-Identify and list enterprise systems, APIs, or internal platforms that this system must integrate with (e.g., Azure AD, Salesforce, etc.).
-Explain the integration purpose and method.
+Identify and list technology components and respective cloud providers.
 </Task>
 
 Return the list with explanation.
 """
 
-INTEGRATION_MAPPING_HUMAN_PROMPT="""
+TECHNOLOGY_MAPPING_HUMAN_PROMPT="""
 Please refer the following requirements and enlist the internal apis and components
 {refined_requirements}
 """
 
 # === Prompt: Diagram Generator ===
 DIAGRAM_CODE_GENERATOR_SYSTEM_PROMPT = """
-    You are an expert architect and Python developer specializing in the 'diagrams' library.
-        Your task is to generate valid Python code using the 'diagrams' library to represent an architecture
-        based on the provided requirements.
+You are an expert software architect and Graphviz specialist.
 
-        **Process:**
-        1. **Analyze the requirements and identify all distinct diagram components needed (e.g., EC2, Lambda, Users, Kubernetes Pod).**
-        2. **Crucially, use the 'ResolveDiagramImports' tool to get the precise import statements for these identified components.**
-        3. Construct the full Python code for the diagram.
+Your task is to generate a clean and valid Graphviz DOT language diagram representing the system architecture based on the provided requirements.
 
-        **Key Guidelines for Code Generation:**
-        - Imports: Always include all necessary imports identified by 'ResolveDiagramImports'.
-        - Structure: Always wrap your diagram logic in a `with Diagram(...)` block.
-        - Filename: The `filename` parameter in `Diagram()` should always be 'output'.
-        - Show: The `show` parameter in `Diagram()` should always be `False`.
-        - Graphviz: Assume Graphviz is installed.
-        - Node Naming: Use descriptive, short names for diagram nodes.
-        - Relationships: Clearly define relationships using `>>`, `<<`, `|` operators.
-        - Comments: Add comments for clarity where necessary.
-        - Output Format: ONLY output the Python code block, nothing else. Do not explain the code or provide extra text outside the code block.
+**Process:**
+1. Analyze the requirements and identify key system components (e.g., frontend, backend, database, services, cloud).
+2. Use clusters (subgraphs) to group related components (frontend, backend, database, external services, cloud).
+3. Use directed edges to show relationships and data flow.
+4. Use appropriate node shapes (e.g., box for apps, cylinder for databases).
+5. Apply modern styling properties like style, fillcolor, etc. with variations and soft color palettes.
+6. Ensure all node names are **uniquely defined before they are referenced** in edges or `rank=same` blocks.
+7. Only use `{rank=same; ...}` if every node in the group has been explicitly declared with a unique identifier.
+8. Avoid referencing group names like "Frontend", "Backend", or "Database" unless they are actual node names.
+9. Prefer using **invisible edges** (`style=invis`) for visual alignment if needed instead of `rank=same`.
+10. Always start with `digraph G {` and end with `}`.
+11. Return only the Graphviz DOT code — do not include explanations, markdown, or extra text.
 
-    Return Python code only.
+Output a complete and valid DOT graph.
 """
-
 DIAGRAM_CODE_GENERATOR_HUMAN_PROMPT = """
-Generate a Python diagram code for the following refined architectural requirements and technical components 
+Generate a valid and visually modern Graphviz DOT diagram for the following system.
 
-\n\n{requirements}
-\n\n{components}
+<requirements>
+{requirements}
+</requirements>
+
+<components>
+{components}
+</components>
 
 """
-
 
 # === Prompt: Final Spec Generator ===
 DOCUMENT_FORMATTER_PROMPT = """

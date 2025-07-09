@@ -3,34 +3,46 @@ from pathlib import Path
 import subprocess
 
 dummy_code = """
-from diagrams import Cluster, Diagram
-from diagrams.aws.compute import ECS, EKS, Lambda
-from diagrams.aws.database import Redshift
-from diagrams.aws.integration import SQS
-from diagrams.aws.storage import S3
+from diagrams import Diagram, Cluster, Edge, Node
 
-with Diagram("Event Processing", show=False):
-    source = EKS("k8s source")
+with Diagram("Travel Management System", show=False, filename="output"):
+    users = Node("Users")
 
-    with Cluster("Event Flows"):
-        with Cluster("Event Workers"):
-            workers = [ECS("worker1"),
-                       ECS("worker2"),
-                       ECS("worker3")]
+    with Cluster("Azure Cloud"):
+        with Cluster("Resource Group"):
+            with Cluster("Azure Kubernetes Service (AKS)"):
+                frontend_pod = Node("Frontend (React, TypeScript)")
+                backend_pod = Node("Backend (Node.js, Express.js)")
 
-        queue = SQS("event queue")
+            postgres = Node("PostgreSQL Database")
+            api_management = Node("API Management")
+            active_directory = Node("Azure Active Directory")
+            blob_storage = Node("Blob Storage (Itinerary Attachments)")
 
-        with Cluster("Processing"):
-            handlers = [Lambda("proc1"),
-                        Lambda("proc2"),
-                        Lambda("proc3")]
 
-    store = S3("events store")
-    dw = Redshift("analytics")
+    with Cluster("External Systems"):
+        travel_apis = Node("Travel APIs (Flights, Hotels, Cars)")
+        expense_system = Node("Expense Management System")
 
-    source >> workers >> queue >> handlers
-    handlers >> store
-    handlers >> dw
+    with Cluster("Monitoring"):
+        grafana = Node("Grafana")
+        prometheus = Node("Prometheus")
+
+    users >> Edge(label="User Authentication") >> active_directory
+    users >> Edge(label="Web UI") >> api_management
+    api_management >> frontend_pod
+    frontend_pod >> backend_pod
+    backend_pod >> postgres
+    backend_pod >> blob_storage
+    backend_pod >> Edge(label="API Calls") >> travel_apis
+    backend_pod >> Edge(label="Expense Data") >> expense_system
+
+    prometheus >> grafana
+    frontend_pod - Edge(style="dashed", label="Metrics") - prometheus
+    backend_pod - Edge(style="dashed", label="Metrics") - prometheus
+    postgres - Edge(style="dashed", label="Metrics") - prometheus
+
+    Node("Azure DevOps (CI/CD)") >> Node
 
     """
 

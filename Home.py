@@ -1,12 +1,19 @@
 import streamlit as st
 
+from phoenix.otel import register
+
+trace_provider = register(
+   project_name="ai-report-generation",
+   auto_instrument=True
+)
+
 st.markdown("<div style='text-align: center; margin-bottom:20px'><h1>📚 AI Report Generator</h1></div>", unsafe_allow_html=True)
 
 st.write("""
 A powerful, AI-driven application that generates comprehensive AI reports on any topic, leveraging the latest LLMs and a multi-step workflow orchestration. Built with LangGraph, LangChain, and Streamlit.
 """)
 
-st.image("https://langchain-ai.github.io/langgraph/tutorials/workflows/img/worker.png", caption="")
+st.image("static/images/HITL.png", caption="")
 
 st.markdown("---")
 

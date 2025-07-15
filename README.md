@@ -2,13 +2,14 @@
 
 A powerful, AI-driven application that generates comprehensive AI reports on any topic, leveraging the latest LLMs and a multi-step workflow orchestration. Built with [LangGraph](https://github.com/langchain-ai/langgraph), [LangChain](https://github.com/langchain-ai/langchain), and [Streamlit](https://streamlit.io/).
 
-![Demo Screenshot](https://langchain-ai.github.io/langgraph/tutorials/workflows/img/worker.png)
+![HITL Demo Screenshot](static/images/HITL.png)
 
 
 ## 🚀 Features
 
 - **Automated AI Report Generation**: Enter any topic and receive a structured, scholarly AI report.
 - **Section Planning**: The app intelligently breaks down your topic into logical sections, each with a clear description.
+- **Human-in-the-Loop Review**: Review and approve the proposed report structure before content generation begins, ensuring the final report meets your exact requirements.
 - **AI-Powered Writing**: Each section is written by an LLM, with citations and scholarly tone.
 - **Seamless Orchestration**: Uses a multi-step workflow (orchestrator, workers, synthesizer) for modular, extensible report generation.
 - **Modern UI**: Clean, interactive Streamlit interface for easy use.
@@ -18,8 +19,9 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 
 1. **Input**: Enter your topic.
 2. **Planning**: The orchestrator LLM creates a report outline with section names and descriptions.
-3. **Writing**: Each section is written by a dedicated LLM worker, with citations and markdown formatting.
-4. **Synthesis**: All sections are combined into a final, ready-to-use AI report.
+3. **Human Review**: Review the proposed structure and provide feedback or approval before proceeding.
+4. **Writing**: Each section is written by a dedicated LLM worker, with citations and markdown formatting.
+5. **Synthesis**: All sections are combined into a final, ready-to-use AI report.
 
 
 ## 🏗️ Tech Stack
@@ -63,14 +65,16 @@ A powerful, AI-driven application that generates comprehensive AI reports on any
 
 1. Open the app in your browser.
 2. Enter a topic, e.g., `Impact of WBG DPI in Lower and Middle Income countries`.
-3. Watch as the app plans, writes, and synthesizes your AI report.
-4. Copy or download your final report!
+3. Review the AI-generated report structure and provide feedback or approval.
+4. Watch as the app writes and synthesizes your AI report based on your approved structure.
+5. Copy or download your final report!
 
 
 ## ✨ Why Use This?
 
 - **Save hours** on report writing.
 - **Get structured, scholarly content** with citations.
+- **Human oversight** ensures the report structure meets your specific needs.
 - **Flexible and extensible** for research, academia, or business.
 
 

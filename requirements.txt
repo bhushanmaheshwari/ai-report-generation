@@ -6,3 +6,8 @@ python-dotenv
 langgraph
 langchain
 langsmith
+arize-phoenix
+langchain_openai
+azure-identity
+python-docx
+markdown

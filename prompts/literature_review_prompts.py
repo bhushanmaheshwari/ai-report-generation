@@ -1,7 +1,7 @@
 # Prompts for AI Literature Review Generation
 
 # System prompt for orchestrator (literature review planning)
-ORCHESTRATOR_SYSTEM_PROMPT = (
+PLANNER_SYSTEM_PROMPT = (
     "A literature review is a comprehensive survey of scholarly sources on a specific topic. "
     "It provides an overview of current knowledge, identifies gaps, and synthesizes findings from multiple studies. "
     "A literature review should critically analyze and evaluate existing research, not just summarize it. "
@@ -13,8 +13,17 @@ ORCHESTRATOR_SYSTEM_PROMPT = (
 )
 
 # Human prompt for orchestrator (injects topic)
-def orchestrator_human_prompt(topic):
+def planner_human_prompt(topic):
     return f"here is the literature review topic: {topic}"
+
+# System prompt for human review (report structure)
+HUMAN_REVIEW_SYSTEM_PROMPT = (
+    "You are going to get a user response to list of sections that will be generated as part of a report. Verify if user_added_inputs are in sync with the suggested_list_of_sections. Return True or False"
+)
+
+def human_review_human_prompt(sections, user_added_inputs): 
+   return f"here is the suggested_list_of_sections : {sections} \n\n here is the user_additional_inputs: {user_added_inputs}"
+
 
 # System prompt for worker (writing a literature review section)
 WORKER_SYSTEM_PROMPT = (

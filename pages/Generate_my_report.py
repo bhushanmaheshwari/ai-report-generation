@@ -13,9 +13,9 @@ for key, value in [
 
 st.title("AI Report Generator")
 
-with st.container(border=True):
+with st.container():
     st.markdown("Generate comprehensive research reports on any topic using **Agentic-AI-powered-workflows.** Simply enter your research question below and our intelligent system will plan, research, and synthesize a detailed report for you.")
-    st.image("static/images/home_page.jpeg")
+    st.image("static/images/HITL.png")
 
 manager = ReportManager()
 

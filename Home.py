@@ -13,7 +13,7 @@ st.write("""
 A powerful, AI-driven application that generates comprehensive AI reports on any topic, leveraging the latest LLMs and a multi-step workflow orchestration. Built with LangGraph, LangChain, and Streamlit.
 """)
 
-st.image("static/images/HITL.png", caption="")
+st.image("static/images/home_page.jpeg", caption="")
 
 st.markdown("---")
 

@@ -7,4 +7,9 @@ langgraph
 langchain
 langsmith
 diagrams
-reportlab
+langchain_openai
+azure-identity
+# Document generation
+python-docx
+markdown
+phoenix

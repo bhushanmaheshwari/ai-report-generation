@@ -1,7 +1,7 @@
 # Prompts for AI Report Generation
 
 # System prompt for orchestrator (report planning)
-ORCHESTRATOR_SYSTEM_PROMPT = (
+PLANNER_SYSTEM_PROMPT = (
     "A report is a formal document that presents factual information, analysis, and potentially recommendations about a specific topic, event, or situation. "
     "It's a structured way to communicate details and insights to an audience, often in a written format. "
     "Generate a report for the given topic. "
@@ -11,7 +11,7 @@ ORCHESTRATOR_SYSTEM_PROMPT = (
 )
 
 # Human prompt for orchestrator (injects topic)
-def orchestrator_human_prompt(topic):
+def planner_human_prompt(topic):
     return f"here is the report topic: {topic}"
 
 # System prompt for worker (writing a section)

@@ -1,5 +1,13 @@
 import streamlit as st
 
+from phoenix.otel import register
+
+trace_provider = register(
+   project_name="ai-report-generation",
+   auto_instrument=True
+)
+
+
 st.markdown("<div style='text-align: center; margin-bottom:20px'><h1>📚 AI Report Generator</h1></div>", unsafe_allow_html=True)
 
 st.write("""

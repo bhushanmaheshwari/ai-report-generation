@@ -4,6 +4,8 @@ import operator
 
 class State(TypedDict):
     topic: str
+    human_approved: bool
+    human_message: str
     sections: List[Section]
     section_summaries: Annotated[list, operator.add]
     completed_sections: Annotated[list, operator.add]

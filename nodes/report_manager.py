@@ -5,7 +5,7 @@ class ReportManager:
     """A report manager to review, orchestrate, assign workers, and sythesize the final report"""
 
     def __init__(self):
-        self.config = {"configurable": {"thread_id": "1"}}
+        self.config = {"configurable": {"thread_id": "1", "user_id":"1"}}
 
     def _process_events(self, events):
         divider = "\n\n---\n\n"

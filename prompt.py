@@ -31,8 +31,9 @@ WORKER_SYSTEM_PROMPT = (
 )
 
 # Human prompt for worker (injects section name and description)
-def worker_human_prompt(section_name, section_description):
+def worker_human_prompt(section_name, section_description, memory_context):
     return (
         f"Write a report section with the following name: {section_name} "
         f"and description: {section_description}"
+        f"these are the memory context : {memory_context}"
     )
